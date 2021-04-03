@@ -7,6 +7,8 @@ import { ItemsService } from './items/items.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import {Item} from './entities/item.entity'
 import { Connection } from 'typeorm';
+import { UserController } from './user/user.controller';
+import { UserService } from './user/user.service';
 import config from './config/keys'
 
 
@@ -23,8 +25,8 @@ import config from './config/keys'
       synchronize: false,
     }),
   ] ,
-  controllers: [AppController, ItemsController],
-  providers: [AppService, ItemsService],
+  controllers: [AppController, ItemsController, UserController],
+  providers: [AppService, ItemsService, UserService],
 })
 export class AppModule {
 }
